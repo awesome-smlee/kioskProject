@@ -20,7 +20,7 @@ configurations {
 }
 
 repositories {
-    mavenCentral()
+    mavenCentral() // Maven Central 리포지토리 추가
 }
 
 dependencies {
@@ -32,8 +32,17 @@ dependencies {
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
     testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.3'
+
+    // JSP
+    implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
+    implementation 'javax.servlet.jsp.jstl:jstl-api:1.2'
+    implementation 'org.apache.taglibs:taglibs-standard-impl:1.2.5'
 }
 
 test {
     useJUnitPlatform()
+}
+
+tasks.withType(JavaCompile) {
+    options.encoding = 'UTF-8'
 }

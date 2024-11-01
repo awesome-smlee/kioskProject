@@ -60,4 +60,10 @@ public class OrderController {
         return orderService.getReceipt();
     }
 
+    // JSP TEST -----------
+    // @RestController -> @Controller로 바꿔야함
+//    @GetMapping("/hello")
+//    public String hello() {
+//        return "hello";
+//    }
 }
