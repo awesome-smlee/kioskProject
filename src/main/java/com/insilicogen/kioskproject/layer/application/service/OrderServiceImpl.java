@@ -83,6 +83,7 @@ public class OrderServiceImpl implements OrderService {
         return "카운터에 문의 바랍니다.";
     }
 
+
     // 결제 내역 조회
     @Override
     public PaymentInfo getPaymentInfo() {
@@ -95,4 +96,14 @@ public class OrderServiceImpl implements OrderService {
         return Receipt.getReceipt();
     }
 
+
+    @Override
+    public String cancelOrder(int orderId) {
+        return "";
+    }
+
+    @Override
+    public String cancelPayment(int paymentId) {
+        return "";
+    }
 }

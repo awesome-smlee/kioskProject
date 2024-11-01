@@ -19,4 +19,8 @@ public interface OrderService {
     public String requestCouponPayment(PaymentInfo paymentInfo);
 
     public String requestCashPayment();
+
+    public String cancelOrder(int orderId);
+
+    public String cancelPayment(int paymentId);
 }

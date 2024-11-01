@@ -60,10 +60,16 @@ public class OrderController {
         return orderService.getReceipt();
     }
 
-    // JSP TEST -----------
-    // @RestController -> @Controller로 바꿔야함
-//    @GetMapping("/hello")
-//    public String hello() {
-//        return "hello";
-//    }
+    // 주문 취소
+    @PostMapping("/cancel/{orderId}")
+    public String cancelOrder(@PathVariable int orderId) {
+        return orderService.cancelOrder(orderId);
+    }
+
+    // 결제 취소
+    @PostMapping("/payment/cancel/{paymentId}")
+    public String cancelPayment(@PathVariable int paymentId) {
+        return orderService.cancelPayment(paymentId);
+    }
+
 }
