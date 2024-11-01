@@ -25,7 +25,6 @@ public class OrderServiceImpl implements OrderService {
 
         boolean isApproved = processCardPayment(paymentInfo);
 
-        // 결제 결과 반환 (카드 api 호출)
         return paymentResult(isApproved);
     }
 
@@ -35,7 +34,7 @@ public class OrderServiceImpl implements OrderService {
         log.info("쿠폰 결제 요청중 ....");
 
         boolean isApproved = processCardPayment(paymentInfo);
-        // 결제 결과 반환 (쿠폰 api 호출/로직이 비슷해서 일단 카드 api 사용했습니다람쥐..)
+
         return paymentResult(true);
     }
 
@@ -50,7 +49,7 @@ public class OrderServiceImpl implements OrderService {
 
         // 유효성 검증
         if(isCardInfoVaild(cardNumber, cardExpiryDate, cardCVC)) {
-            // 카드 정보 유효
+            // 카드 정보 유효O
             log.info("카드 정보가 유효합니다. 결제를 승인합니다.");
             return true;
 
@@ -62,14 +61,15 @@ public class OrderServiceImpl implements OrderService {
     }
 
     // 카드 결제 유효성 검사
-    private boolean isCardInfoVaild(String cardNumber, String cardExpiryDate, int cardCVC) {
-        int parseCardNumber = cardNumber.replaceAll("-","").length();
-        int parseExpiryDate = cardExpiryDate.replaceAll("-","").length(); // 유효기간 4자리 (MMYY)
-        return parseCardNumber == 16 && parseExpiryDate == 4 && cardCVC == 3;
+    public boolean isCardInfoVaild(String cardNumber, String cardExpiryDate, int cardCVC) {
+        int cardNumberLength = cardNumber.replaceAll("-", "").length(); // 카드 번호의 길이
+        int expiryDateLength = cardExpiryDate.replaceAll("-", "").length(); // 유효 기간의 길이 (MMYY)
+        String cvcString = String.valueOf(cardCVC); // CVC를 문자열로 변환
+        return cardNumberLength == 16 && expiryDateLength == 4 && cvcString.length() == 3; // 유효성 검사
     }
     
     // 결제 결과를 반환하는 공통 메서드
-    private String paymentResult(boolean isApproved) {
+    public String paymentResult(boolean isApproved) {
         if (isApproved) {
             return "결제가 완료되었습니다.";
         } else {

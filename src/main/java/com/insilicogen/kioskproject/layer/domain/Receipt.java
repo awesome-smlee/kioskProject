@@ -14,7 +14,7 @@ public class Receipt {
     private final int paymentAmount; // 결제 금액
     private final String paymentDate; // 결제 일시
 
-    // 상점 정보(같이 출력해야해서 임시로 여기에 추가함)
+    // 상점 정보(임시로 여기에 추가함)
     private final String storeName; // 상점 이름
     private final String storeAddress; // 상점 주소
     private final String storePhone; // 상점 전화번호

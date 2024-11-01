@@ -18,7 +18,6 @@ public class LoggingAspect {
     @Pointcut("execution(* com.insilicogen.kioskproject.layer.application.service.*.*(..))")
     public void serviceLayerPointcut() {}
 
-    // 서비스 레이어의 메서드가 호출되기 전에 로그를 출력하는 어드바이스 메서드
     @Before("serviceLayerPointcut()")
     public void logBeforeMethodCall(JoinPoint joinPoint) {
         log.info("서비스 레이어 메서드 호출: {}", joinPoint.getSignature());

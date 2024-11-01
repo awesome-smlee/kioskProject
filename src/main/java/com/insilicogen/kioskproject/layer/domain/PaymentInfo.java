@@ -3,8 +3,10 @@ package com.insilicogen.kioskproject.layer.domain;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.RequiredArgsConstructor;
+import lombok.Setter;
 
 @Getter
+@Setter
 @Builder
 @RequiredArgsConstructor
 public class PaymentInfo {
@@ -27,6 +29,12 @@ public class PaymentInfo {
 
     // dummy
     public static PaymentInfo getPaymentInfo() {
-        return PaymentInfo.builder().cardNumber("1234-5678-1234-5678").userNumber("1235-1234-6234-1235").build();
+        return PaymentInfo.builder()
+                .paymentAmount(10000)
+                .userNumber("1235-1234-6234-1235")
+                .cardNumber("1234-1234-1234-1234")
+                .cardExpiryDate("0220")
+                .cardCVC(222)
+                .build();
     }
 }

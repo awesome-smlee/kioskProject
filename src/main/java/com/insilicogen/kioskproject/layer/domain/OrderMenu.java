@@ -26,4 +26,5 @@ public class OrderMenu {
                 OrderMenu.builder().orderMenuId("R006").orderId("6").menuId("6").menuQty(5).build()
         );
     }
+
 }
