@@ -1,0 +1,76 @@
+/* reset */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    color: #333;
+    background: #4ebb4e;
+}
+
+img {
+    width: 100%;
+    height: 100%;
+}
+
+button {
+    border: none;
+    background: none;
+    color: inherit;
+    cursor: pointer;
+}
+
+:root {
+    --main-color: #4fc64f;
+}
+/* conatiner */
+.menu-list-container, .payment-container {padding: 30px;}
+.menu-container {
+    overflow: hidden;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    background: var(--main-color);
+}
+
+.header h1 {
+    color: #fff;
+}
+
+.menu-list-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    justify-content: center;
+}
+
+.menu {padding: 25px;
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 1px 8px 18px rgba(0, 0, 0, 0.006), 0 1px 2px; cursor: pointer; transition: all 0.3s;}
+.menu:hover {background: #b2d9b7;}
+.menu img {
+    height: 200px; margin-bottom: 16px; border-radius: 6px;}
+.menu p {font-size: 18px; font-weight: 900; text-align: center;}
+
+.flex-box {display: flex; align-items: center; justify-content: center;}
+.payment-container {display: flex;justify-content: center;gap: 20px;}
+.payment-container .cart-wrap {width: 70%;}
+.payment-container .cart-area {background: #fff;border-radius: 5px;width: 100%;height: 228px; padding: 30px;}
+.payment-container .right-wrap {display: flex;justify-content: space-between; width: 30%;
+    height: 100%; flex-direction: column;}
+.payment-container .right-wrap .time {font-size: 26px;font-weight: 900;text-align: center;color: #fff;}
+.payment-container .right-wrap .time span {display: inline-block; color: #005500;}
+.payment-container .right-wrap button {width: 100%;background: #fff; border-radius: 5px; font-weight: 900; transition: all 0.3s;}
+.payment-container .right-wrap button:hover {background: #b2d9b7;}
+.payment-container .right-wrap .all-remove-btn {height: 54px;font-size: 22px; margin: 10px 0;}
+.payment-container .right-wrap .payment-btn {height: 85px;font-size: 22px;}
+
